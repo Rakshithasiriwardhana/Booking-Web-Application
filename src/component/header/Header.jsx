@@ -40,7 +40,7 @@ const Header = () => {
           <div className="flex items-center gap-4">
             <div>
               <Link to="/">
-                <figure className="w-[35px] h-[35px] rounded-full">
+                <figure className="w-[35px] h-[35px] rounded-full cursor-pointer">
                   <img
                     src={userImg}
                     className="w-full  rounded-full"
@@ -49,6 +49,11 @@ const Header = () => {
                 </figure>
               </Link>
             </div>
+
+            <Link to ='/login'>
+
+              <button className="bg-primaryColor py-2 px-6 text-white flex items-center">Log In</button>
+            </Link>
           </div>
         </div>
       </div>
