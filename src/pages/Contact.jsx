@@ -5,9 +5,10 @@ function Contact() {
   return (
     <div>
       <div className="flex">
-        <div>Contact Us</div>
+        <div>Contact Us
         <div className="flex align-right">
           <GoogleMapEmbed />
+        </div>
         </div>
       </div>
     </div>

@@ -1,25 +1,29 @@
-import "./index.css";
-import About from "./pages/About";
-import Appointment from "./pages/Appointment";
-import Contact from "./pages/Contact";
-import Dashboard from "./pages/Dashboard";
+import React from "react";
+import Layout from "./layout/Layout";
+
+// import About from "./pages/About";
+// import Appointment from "./pages/Appointment";
+// import Contact from "./pages/Contact";
+// import Dashboard from "./pages/Dashboard";
 // import GoogleMapEmbed from "./pages/GoogleMapEmbed";
-import Medical from "./pages/Medical";
-import Register from "./pages/Register";
-import SignIn from "./pages/SignIn";
+// import Medical from "./pages/Medical";
+// import Register from "./pages/Register";
+// import SignIn from "./pages/SignIn";
 
 function App() {
   return (
     <div className="App">
-      <SignIn />
+      <Layout/>
+
+      {/* <SignIn />
       <Contact/>
       <Register />
-      {/* <Reset/> */}
+      <Reset/>
       <Dashboard />
       <Appointment />
       <Medical />
-      <About />
-     
+      <About /> */}
+      
     </div>
   );
 }
