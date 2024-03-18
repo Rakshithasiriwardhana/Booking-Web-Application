@@ -12,7 +12,6 @@ import Contact from "./pages/Contact";
 import Appointment from "./pages/Appointment";
 import PasswordReset from "./pages/PasswordReset";
 import Register from "./pages/Register";
-// import Navbar from "./component/header/Navbar";
 
 // import Layout from "./layout/Layout";
 // import About from "./pages/About";
@@ -29,7 +28,6 @@ function App() {
     <div className="App">      
       <BrowserRouter>
         <Header />
-        {/* <Navbar/> */}
         <Routes>
         
           <Route path="/" element={<Home />} />
