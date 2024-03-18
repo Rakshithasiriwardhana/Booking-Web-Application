@@ -1,15 +1,19 @@
-import { useEffect, useRef } from "react";
+import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
-import userImg from "../../assets/images/avatar-icon.png";
+import userImg from "../../assets/images/patient-avatar.png";
+import { BiMenu } from "react-icons/bi";
 
 const navLinks = [
   { path: "/home", display: "Home" },
   { path: "/doctors", display: "Find a Doctor" },
-  { path: "/contact", display: "Contact" },
+  { path: "/appointment", display: "Appointments" },
+  { path: "/contact", display: "Contact Us" },
+  { path: "/Passreset", display: "Password Reset" },
+  { path: "/docregister", display: "Doctor Registration" },
 ];
 
-const Header = () => {
+const Header = React.memo(() => {
   return (
     <header className="header flex items-center">
       <div className="container">
@@ -20,17 +24,17 @@ const Header = () => {
 
           <div className="navigation">
             <ul className="menu flex items-center gap-[2.7rem]">
-              {navLinks.map((link, index) => (
+              {navLinks.map(({display, path}, index) => (
                 <li key={index}>
                   <NavLink
-                    to={link.path}
-                    ClassName={(navClass) =>
-                      navClass.isActive
+                    to={path}
+                    className={({isActive}) => (
+                      isActive
                         ? "text-primaryColor text-[16px] leading-7 font-[600]"
                         : "text-primaryColor text-[16px] leading-7 font-[500] hover:bg-primaryColor"
-                    }
+                    )}
                   >
-                    {link.display}
+                    {display}
                   </NavLink>
                 </li>
               ))}
@@ -44,21 +48,25 @@ const Header = () => {
                   <img
                     src={userImg}
                     className="w-full  rounded-full"
-                    alt="img"
+                    alt="userimg"
                   />
                 </figure>
               </Link>
             </div>
 
-            <Link to ='/login'>
-
-              <button className="bg-primaryColor py-2 px-6 text-white flex items-center">Log In</button>
+            <Link to="/login">
+              <button className="btn bg-primaryColor py-2 px-6 text-white h-[44px] flex items-center justify-center rounded-[50px]">
+                Login
+              </button>
             </Link>
+
+            <span className="md:hidden">
+              <BiMenu className= "w-6 h-6 cursor-pointer" /></span>
           </div>
         </div>
       </div>
     </header>
   );
-};
+});
 
 export default Header;

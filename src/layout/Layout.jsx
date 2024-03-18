@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../component/header/Header';
-import Routers from '../routes/Routers';
+import AppRoutes from '../routes/AppRoutes';
 import Footer from '../component/Footer/Footer';
 
 const Layout = () => {
@@ -8,7 +8,7 @@ const Layout = () => {
     <>
       <Header />
       <main>
-        <Routers />
+        <AppRoutes />
       </main>
       <Footer />
     </>

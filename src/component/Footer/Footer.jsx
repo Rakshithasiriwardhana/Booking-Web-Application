@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 function Footer() {
   return (
-    <div>Footer</div>
-  )
+    <div style={{ textAlign: 'center' }}>© 2024 Medical.lk</div>
+  );
 }
 
-export default Footer
+export default Footer;

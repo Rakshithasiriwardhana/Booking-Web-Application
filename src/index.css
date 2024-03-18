@@ -10,7 +10,7 @@
 
 @layer components {
   .container {
-    @apply max-w-[1440px] w-full px-5 mx-auto; 
+    @apply max-w-full px-5 mx-auto; 
   }
   .btn {
     @apply bg-primaryColor py-3 px-8 rounded-full text-white font-semibold mt-10; 
@@ -21,6 +21,10 @@
   .text_para {
     @apply text-lg leading-7 text-textColor mt-3;
   }
+  /* .header {
+    @apply bg-center bg-cover w-full h-[100px] leading-
+    [100px];
+    } */
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,6 +1,20 @@
 import React from "react";
-import Layout from "./layout/Layout";
+import Header from "./component/header/Header";
+import Footer from "./component/Footer/Footer";
+// import AppRoutes from "./routes/AppRoutes";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Doctors from "./pages/doctor/Doctors";
+import DoctorDetails from "./pages/doctor/DoctorDetails";
+import Login from "./pages/Login";
+import SignIn from "./pages/SignIn";
+import Contact from "./pages/Contact";
+import Appointment from "./pages/Appointment";
+import PasswordReset from "./pages/PasswordReset";
+import Register from "./pages/Register";
+// import Navbar from "./component/header/Navbar";
 
+// import Layout from "./layout/Layout";
 // import About from "./pages/About";
 // import Appointment from "./pages/Appointment";
 // import Contact from "./pages/Contact";
@@ -12,8 +26,26 @@ import Layout from "./layout/Layout";
 
 function App() {
   return (
-    <div className="App">
-      <Layout/>
+    <div className="App">      
+      <BrowserRouter>
+        <Header />
+        {/* <Navbar/> */}
+        <Routes>
+        
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/doctors" element={<Doctors />} />
+          <Route path="/doctors/:id" element={<DoctorDetails />} />
+          <Route path="/appointments" element={<Appointment />} />
+          <Route path="/register" element={<SignIn />} />
+          <Route path="/Passreset" element={<PasswordReset/>} />
+          <Route path="/docregister" element={<Register/>} />
+          
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
 
       {/* <SignIn />
       <Contact/>
@@ -23,7 +55,6 @@ function App() {
       <Appointment />
       <Medical />
       <About /> */}
-      
     </div>
   );
 }
