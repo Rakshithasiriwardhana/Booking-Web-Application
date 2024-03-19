@@ -5,12 +5,12 @@ import userImg from "../../assets/images/patient-avatar.png";
 import { BiMenu } from "react-icons/bi";
 
 const navLinks = [
-  { path: "/home", display: "Home" },
-  { path: "/doctors", display: "Find a Doctor" },
-  { path: "/appointment", display: "Appointments" },
-  { path: "/contact", display: "Contact Us" },
-  { path: "/Passreset", display: "Password Reset" },
-  { path: "/docregister", display: "Doctor Registration" },
+  { path: "/Booking-Web-Application/home", display: "Home" },
+  { path: "/Booking-Web-Application/doctors", display: "Find a Doctor" },
+  { path: "/Booking-Web-Application/appointment", display: "Appointments" },
+  { path: "/Booking-Web-Application/contact", display: "Contact Us" },
+  { path: "/Booking-Web-Application/Passreset", display: "Password Reset" },
+  { path: "/Booking-Web-Application/docregister", display: "Doctor Registration" },
 ];
 
 const Header = React.memo(() => {
@@ -54,7 +54,7 @@ const Header = React.memo(() => {
               </Link>
             </div>
 
-            <Link to="/login">
+            <Link to="/Booking-Web-Application/login">
               <button className="btn bg-primaryColor py-2 px-6 text-white h-[44px] flex items-center justify-center rounded-[50px]">
                 Login
               </button>

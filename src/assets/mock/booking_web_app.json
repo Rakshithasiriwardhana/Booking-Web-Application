@@ -1,0 +1,80 @@
+{
+  "uuid": "d302af57-3c6f-4c7d-b17f-bfb366b975f6",
+  "lastMigration": 32,
+  "name": "Booking web app",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "f51a9758-1bc6-4a94-a4d2-afa66799c2a9",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/v1/doctor",
+      "responses": [
+        {
+          "uuid": "d9caf5ba-78ca-4577-8d55-2d34fd9e5f2d",
+          "body": "{\r\n   \"id\":\"01\",\r\n   \"name\":\"Dr. Alfaz Ahmed\",\r\n   \"specialization\":\"Surgeon\",\r\n   \"avgRating\":4.8,\r\n   \"totalRating\":272,\r\n   \"totalPatients\":1500,\r\n   \"hospital\":\"Mount Adora Hospital, Sylhet.\"\r\n},\r\n{\r\n   \"id\":\"02\",\r\n   \"name\":\"Dr. Saleh Mahmud\",\r\n   \"specialization\":\"Neurologist\",\r\n   \"avgRating\":4.8,\r\n   \"totalRating\":272,\r\n   \"totalPatients\":1500,\r\n   \"hospital\":\"Mount Adora Hospital, Sylhet.\"\r\n},\r\n{\r\n   \"id\":\"03\",\r\n   \"name\":\"Dr. Farid Uddin\",\r\n   \"specialization\":\"Dermatologist\",\r\n   \"avgRating\":4.8,\r\n   \"totalRating\":272,\r\n   \"totalPatients\":1500,\r\n   \"hospital\":\"Mount Adora Hospital, Sylhet.\"\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "f51a9758-1bc6-4a94-a4d2-afa66799c2a9"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
