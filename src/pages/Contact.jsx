@@ -1,15 +1,15 @@
 import React from "react";
-import GoogleMapEmbed from "./GoogleMapEmbed";
 import { MdAttachEmail } from "react-icons/md";
 import { IoCall } from "react-icons/io5";
 import { SlEnvolopeLetter } from "react-icons/sl";
+import MapComponent from "./MapComponent";
 
 function Contact() {
   return (
     <div className="flex">
       <div className="flex-1">
         <div className="m-5">
-          <GoogleMapEmbed />
+          <MapComponent/>
         </div>
       </div>
 

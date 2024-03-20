@@ -35,7 +35,7 @@ function App() {
           <Route path="/Booking-Web-Application/home" element={<Home />} />
           <Route path="/Booking-Web-Application/doctors" element={<Doctors />} />
           <Route path="/Booking-Web-Application/doctors/:id" element={<DoctorList />} />
-          <Route path="/Booking-Web-Application/appointments" element={<Appointment />} />
+          <Route path="/Booking-Web-Application/appointment" element={<Appointment />} />
           <Route path="/Booking-Web-Application/register" element={<SignIn />} />
           <Route path="/Booking-Web-Application/Passreset" element={<PasswordReset/>} />
           <Route path="/Booking-Web-Application/docregister" element={<Register/>} />

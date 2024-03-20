@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react'
 
-function Appointment() {
-  return <div> Appointment | date | time | doctor </div>;
+const Appointment = () => {
+  return (
+    <div className="m-5 justify-center " >
+      Appointment   | date | time | doctor 
+    </div>
+  )
 }
 
-export default Appointment;
+export default Appointment
