@@ -125,7 +125,7 @@ const Register = () => {
             />
             {errors.doctorPassword && <p className="error">{errors.doctorPassword}</p>}
           </div>
-          <button type="submit">Register as Doctor</button>
+          <button className="register-btn" type="submit">Register as Doctor</button>
         </form>
       </div>
       <div className="register-form">

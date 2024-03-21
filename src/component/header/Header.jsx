@@ -31,7 +31,7 @@ const Header = React.memo(() => {
                     className={({isActive}) => (
                       isActive
                         ? "text-primaryColor text-[16px] leading-7 font-[600]"
-                        : "text-primaryColor text-[16px] leading-7 font-[500] hover:bg-primaryColor"
+                        : "text-primaryColor text-[16px] leading-7 font-[500]"
                     )}
                   >
                     {display}
