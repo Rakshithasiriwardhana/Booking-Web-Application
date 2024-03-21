@@ -12,7 +12,7 @@
       "uuid": "f51a9758-1bc6-4a94-a4d2-afa66799c2a9",
       "type": "http",
       "documentation": "",
-      "method": "get",
+      "method": "post",
       "endpoint": "api/v1/doctor",
       "responses": [
         {

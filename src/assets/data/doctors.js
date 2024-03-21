@@ -5,17 +5,17 @@ import doctorImg03 from "../images/doctor-img03.png";
 export const doctors = [
   {
     id: "01",
-    name: "Dr. Alfaz Ahmed",
+    name: "Dr. Ananda samarakoon",
     specialization: "Surgeon",
     avgRating: 4.8,
     totalRating: 272,
     photo: doctorImg01,
-    totalPatients: 1500,
+    totalPatients: 1000,
     hospital: "Mount Adora Hospital, Sylhet.",
   },
   {
     id: "02",
-    name: "Dr. Saleh Mahmud",
+    name: "Dr. mahesh kumar",
     specialization: "Neurologist",
     avgRating: 4.8,
     totalRating: 272,
@@ -30,7 +30,7 @@ export const doctors = [
     avgRating: 4.8,
     totalRating: 272,
     photo: doctorImg03,
-    totalPatients: 1500,
+    totalPatients: 1600,
     hospital: "Mount Adora Hospital, Sylhet.",
   },
 ];
