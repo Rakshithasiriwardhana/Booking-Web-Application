@@ -8,7 +8,7 @@ function Contact() {
   return (
     <div className="flex">
       <div className="flex-1">
-        <div className="m-5">
+        <div className="map-container">
           <MapComponent/>
         </div>
       </div>
