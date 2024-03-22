@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import signupImg from "../assets/images/signup.gif";
-import { useState } from "react";
 
 const Signup = () => {
   
@@ -9,16 +9,20 @@ const Signup = () => {
     email: "",
     password: "",
     gender: "",
-    role: " Patient",
+    role: "admin",
   });
 
   const handleInputChange = (e) => {
-    setFormData({ [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(formData);
-  }
+  
+    alert("Signup successful!");
+  };
+
   return (
     <section className="px-5 xl:px-0">
       <div className="max-w-[1170px] mx-auto">
@@ -39,7 +43,7 @@ const Signup = () => {
                   required
                   type="text"
                   placeholder="Name here"
-                  name="name *"
+                  name="name"
                   value={formData.name}
                   onChange={handleInputChange}
                   className="w-full py-3 px-4 border border-[#E5E5E5] rounded-lg focus:outline-none focus:border-primaryColor text-textColor "
@@ -50,7 +54,7 @@ const Signup = () => {
                   required
                   type="email"
                   placeholder="Email here"
-                  name="name *"
+                  name="email"
                   value={formData.email}
                   onChange={handleInputChange}
                   className="w-full py-3 px-4 border border-[#E5E5E5] rounded-lg focus:outline-none focus:border-primaryColor text-textColor "
@@ -76,9 +80,9 @@ const Signup = () => {
                     onChange={handleInputChange}
                     className="text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none"
                   >
-                    <option value="patient">Patient </option>
+                    <option value="patient">Patient</option>
                     <option value="doctor">Doctor</option>
-                    <option value="doctor">Admin</option>
+                    <option value="admin">Admin</option>
                   </select>
                 </label>
                 <label className="text-headingColor font-bold text-[16px] leading-7">
@@ -89,7 +93,7 @@ const Signup = () => {
                     onChange={handleInputChange}
                     className="text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none"
                   >
-                    <option value="">Select </option>
+                    <option value="">Select</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                   </select>
@@ -104,7 +108,7 @@ const Signup = () => {
                 </button>
               </div>
               <p className="text-center mt-5">
-                Already have an account ?
+                Already have an account?
                 <Link
                   to="/Booking-Web-Application/login"
                   className="text-primaryColor m-2"

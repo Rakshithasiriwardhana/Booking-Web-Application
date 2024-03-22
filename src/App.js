@@ -7,44 +7,32 @@ import Doctors from "./pages/doctor/Doctors";
 import DoctorList from "./pages/doctor/DoctorList";
 import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
-import Contact from "./pages/Contact";
 import Appointment from "./pages/Appointment";
 import PasswordReset from "./pages/PasswordReset";
 import Register from "./pages/Register";
-
-// import AppRoutes from "./routes/AppRoutes";
-// import Layout from "./layout/Layout";
-// import About from "./pages/About";
-// import Appointment from "./pages/Appointment";
-// import Contact from "./pages/Contact";
-// import Dashboard from "./pages/Dashboard";
-// import GoogleMapEmbed from "./pages/GoogleMapEmbed";
-// import Medical from "./pages/Medical";
-// import Register from "./pages/Register";
-// import SignIn from "./pages/SignIn";
+import Patient from "./pages/patient/Patient";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div className="App">      
+    <div className="App">
       <BrowserRouter>
         <Header />
         <Routes>
-        
           <Route path="/Booking-Web-Application/" element={<Home />} />
           <Route path="/Booking-Web-Application/login" element={<Login />} />
           <Route path="/Booking-Web-Application/home" element={<Home />} />
-          <Route path="/Booking-Web-Application/doctors" element={<Doctors />} />
-          <Route path="/Booking-Web-Application/doctors/:id" element={<DoctorList />} />
           <Route path="/Booking-Web-Application/appointment" element={<Appointment />} />
           <Route path="/Booking-Web-Application/register" element={<SignIn />} />
           <Route path="/Booking-Web-Application/Passreset" element={<PasswordReset/>} />
+          <Route path="/Booking-Web-Application/doctors/:id" element={<DoctorList />} />
           <Route path="/Booking-Web-Application/docregister" element={<Register/>} />
+          <Route path="/Booking-Web-Application/patient" element={<Patient />} />
+          <Route path="/Booking-Web-Application/doctors" element={<Doctors />} />
           <Route path="/Booking-Web-Application/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </BrowserRouter>
-
-      
     </div>
   );
 }

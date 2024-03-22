@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker , Popup } from "react-leaflet";
 import Icon from "leaflet";
 import "./MapComponent.css";
 
-const AnyReactComponent = ({ text }) => (
+const Data = ({ text }) => (
   <div
     style={{
       color: "white",

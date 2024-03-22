@@ -9,6 +9,9 @@ const Appointment = ({ history }) => {
     e.preventDefault();
 
     console.log("Appointment details:", { medicalNeed, date });
+    
+    alert(`Appointment for ${medicalNeed} has been scheduled successfully!`);
+
     // Redirect new users to registration page
     history.push("/Booking-Web-Application/register");
   };
@@ -27,7 +30,7 @@ const Appointment = ({ history }) => {
             htmlFor="medicalNeed"
             className="block text-sm font-semibold mb-2"
           >
-            Medical Need:
+            Medical Type:
           </label>
           <select
             id="medicalNeed"

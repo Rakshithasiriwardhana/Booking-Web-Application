@@ -9,8 +9,13 @@ const navLinks = [
   { path: "/Booking-Web-Application/doctors", display: "Find a Doctor" },
   { path: "/Booking-Web-Application/appointment", display: "Appointments" },
   { path: "/Booking-Web-Application/contact", display: "Contact Us" },
-  { path: "/Booking-Web-Application/Passreset", display: "Password Reset" },
-  { path: "/Booking-Web-Application/docregister", display: "Doctor Registration" },
+  {
+    display: "Registration",
+     dropdown: [
+      { path: "/Booking-Web-Application/docregister", display: "For Doctor " },
+      { path: "/Booking-Web-Application/patient", display: "For Patients" },
+    ],
+  },
 ];
 
 const Header = React.memo(() => {
@@ -24,18 +29,36 @@ const Header = React.memo(() => {
 
           <div className="navigation">
             <ul className="menu flex items-center gap-[2.7rem]">
-              {navLinks.map(({display, path}, index) => (
+              {navLinks.map(({ display, path, dropdown }, index) => (
                 <li key={index}>
-                  <NavLink
-                    to={path}
-                    className={({isActive}) => (
-                      isActive
-                        ? "text-primaryColor text-[16px] leading-7 font-[600]"
-                        : "text-primaryColor text-[16px] leading-7 font-[500]"
-                    )}
-                  >
-                    {display}
-                  </NavLink>
+                  {dropdown ? (
+                    <div className="dropdown">
+                      <NavLink
+                        to={path}
+                        className="text-primaryColor text-[16px] leading-7 font-[600] fa fa-caret-down"
+                      >
+                        {display}
+                      </NavLink>
+                      <div className="dropdown-content">
+                        {dropdown.map(({ display, path }, index) => (
+                          <NavLink
+                            key={index}
+                            to={path}
+                            className="text-primaryColor text-[16px] leading-7 font-[600]"
+                          >
+                            {display}
+                          </NavLink>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <NavLink
+                      to={path}
+                      className="text-primaryColor text-[16px] leading-7 font-[500]"
+                    >
+                      {display}
+                    </NavLink>
+                  )}
                 </li>
               ))}
             </ul>
@@ -61,7 +84,8 @@ const Header = React.memo(() => {
             </Link>
 
             <span className="md:hidden">
-              <BiMenu className= "w-6 h-6 cursor-pointer" /></span>
+              <BiMenu className="w-6 h-6 cursor-pointer" />
+            </span>
           </div>
         </div>
       </div>
