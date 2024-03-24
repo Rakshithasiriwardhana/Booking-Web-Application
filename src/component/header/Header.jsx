@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import userImg from "../../assets/images/patient-avatar.png";
@@ -11,14 +11,20 @@ const navLinks = [
   { path: "/Booking-Web-Application/contact", display: "Contact Us" },
   {
     display: "Registration",
-     dropdown: [
-      { path: "/Booking-Web-Application/docregister", display: "For Doctor " },
+    dropdown: [
+      { path: "/Booking-Web-Application/docregister", display: "For Doctor" },
       { path: "/Booking-Web-Application/patient", display: "For Patients" },
     ],
   },
 ];
 
 const Header = React.memo(() => {
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
   return (
     <header className="header flex items-center">
       <div className="container">
@@ -32,24 +38,30 @@ const Header = React.memo(() => {
               {navLinks.map(({ display, path, dropdown }, index) => (
                 <li key={index}>
                   {dropdown ? (
-                    <div className="dropdown">
+                    <div
+                      className="dropdown"
+                      onClick={() => toggleDropdown()}
+                    >
                       <NavLink
                         to={path}
                         className="text-primaryColor text-[16px] leading-7 font-[600] fa fa-caret-down"
                       >
                         {display}
                       </NavLink>
-                      <div className="dropdown-content">
-                        {dropdown.map(({ display, path }, index) => (
-                          <NavLink
-                            key={index}
-                            to={path}
-                            className="text-primaryColor text-[16px] leading-7 font-[600]"
-                          >
-                            {display}
-                          </NavLink>
-                        ))}
-                      </div>
+                      {showDropdown && (
+                        <ul className="dropdown-content">
+                          {dropdown.map(({ display, path }, index) => (
+                            <li key={index}>
+                              <NavLink
+                                to={path}
+                                className="text-primaryColor text-[16px] leading-7 font-[600]"
+                              >
+                                {display}
+                              </NavLink>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   ) : (
                     <NavLink
@@ -70,7 +82,7 @@ const Header = React.memo(() => {
                 <figure className="w-[35px] h-[35px] rounded-full cursor-pointer">
                   <img
                     src={userImg}
-                    className="w-full  rounded-full"
+                    className="w-full rounded-full"
                     alt="userimg"
                   />
                 </figure>
