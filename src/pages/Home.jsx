@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import heroImg2 from "../assets/images/hero-img02.png";
 import heroImg3 from "../assets/images/hero-img03.png";
 import icon01 from "../assets/images/icon01.png";
@@ -6,10 +7,12 @@ import icon02 from "../assets/images/icon02.png";
 import icon03 from "../assets/images/icon03.png";
 import { Link } from "react-router-dom";
 import { LuArrowRightCircle } from "react-icons/lu";
+import { AdminContext } from "./admin/AdminContextProvider";
 // import DoctorList from "./doctor/DoctorList";
 // import Services from "./Services";
 
 const Home = () => {
+  const { userRole } = useContext(AdminContext);
   return (
     <section className="hero_section pt-[60px] 2xl:h-[800px]">
       <div className="container">
@@ -20,7 +23,9 @@ const Home = () => {
             </h1>
             <br />
             <br />
-            <button className="btn justify-betweens">Request an Appointment</button>
+            <button className="btn justify-betweens">
+              Request an Appointment
+            </button>
           </div>
           <div className="mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]">
             <div>
@@ -46,7 +51,8 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 gap-[30px] justify-end">
             <div>
-              <img src={heroImg2} alt="" className="w-full mb-[30px]" />
+             {userRole === "admin" ?  <div></div> :
+              <img src={heroImg2} alt="" className="w-full mb-[30px]" />}
             </div>
             <div>
               <img src={heroImg3} alt=" w-full" />
@@ -88,7 +94,6 @@ const Home = () => {
           <div className="py-[30px] px-5">
             <div className="flex items-center justify-center height-[150px] width-[150px]">
               <img src={icon02} alt="" />
-
             </div>
             <div className="mt-[30px]">
               <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">

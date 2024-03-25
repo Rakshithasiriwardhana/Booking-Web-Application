@@ -46,7 +46,7 @@
       "responses": [
         {
           "uuid": "6cdb2e90-52ba-42f7-9f2a-ef7754aa9b0e",
-          "body": "{\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJwYXRpZW50IiwiZW1haWwiOiJwYXRpZW50QGdtYWlsLmNvbSIsImdlbmRlciI6ImZlbWFsZSIsImlhdCI6MTYzNTc3Mzk2MiwiZXhwIjoxNjM1Nzc3NTYyfQ.wMHEkJaHPMLOiTQajOfjpnZuWrPqcFd3CMudAyclwjQ\"\n}",
+          "body": "{\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiZ2VuZGVyIjoibWFsZSIsImlhdCI6MTYzNTc3Mzk2MiwiZXhwIjoxNjM1Nzc3NTYyfQ.jbEkFzonWUKH72Qzpm1HbbNxXnXQ5_xVGAIOng8wIak\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",

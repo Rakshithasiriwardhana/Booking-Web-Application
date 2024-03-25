@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
+import { AdminContext } from "./admin/AdminContextProvider";
 
 const Login = () => {
+  const history = useNavigate(); 
+  const { setLoggedUserDetails } = useContext(AdminContext);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -16,13 +19,20 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/api/v1/auth/login/", formData);
+      const response = await axios.post(
+        "http://localhost:3001/api/v1/auth/login/",
+        formData
+      );
       const token = response.data.token;
-        
-      console.log(jwtDecode(token).gmail);
-     
+      const decodedToken = jwtDecode(token);
+
+      setLoggedUserDetails(decodedToken);
+      if (decodedToken.email === "admin@gmail.com") {
+        history.push("/Booking-Web-Application/appointments");
+      } else {
+        history.push("/Booking-Web-Application/home");
+      }
     } catch (error) {
-      
       console.error("Login failed:", error.message);
     }
   };
@@ -66,7 +76,10 @@ const Login = () => {
           </div>
           <p className="text-center mt-5">
             Don't have an account?
-            <Link to="/Booking-Web-Application/register" className="text-primaryColor">
+            <Link
+              to="/Booking-Web-Application/register"
+              className="text-primaryColor"
+            >
               Register
             </Link>
           </p>

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import userImg from "../../assets/images/patient-avatar.png";
 import { BiMenu } from "react-icons/bi";
+import { AdminContext } from "../../pages/admin/AdminContextProvider";
 
 const navLinks = [
   { path: "/Booking-Web-Application/home", display: "Home" },
@@ -18,8 +19,38 @@ const navLinks = [
   },
 ];
 
+const AdminNavLinks = () => (
+  <>
+    <li>
+      <NavLink
+        to="/Booking-Web-Application/appointment"
+        className="text-primaryColor text-[16px] leading-7 font-[600]"
+      >
+        Appointments
+      </NavLink>
+    </li>
+    <li>
+      <NavLink
+        to="/Booking-Web-Application/docregister"
+        className="text-primaryColor text-[16px] leading-7 font-[600]"
+      >
+        For Doctor
+      </NavLink>
+    </li>
+    <li>
+      <NavLink
+        to="/Booking-Web-Application/patient"
+        className="text-primaryColor text-[16px] leading-7 font-[600]"
+      >
+        For Patients
+      </NavLink>
+    </li>
+  </>
+);
+
 const Header = React.memo(() => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const { userRole } = useContext(AdminContext);
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
@@ -37,7 +68,7 @@ const Header = React.memo(() => {
             <ul className="menu flex items-center gap-[2.7rem]">
               {navLinks.map(({ display, path, dropdown }, index) => (
                 <li key={index}>
-                  {dropdown ? (
+                  {(dropdown && userRole !== "admin") ? (
                     <div
                       className="dropdown"
                       onClick={() => toggleDropdown()}
@@ -73,6 +104,7 @@ const Header = React.memo(() => {
                   )}
                 </li>
               ))}
+              {userRole === "admin" && <AdminNavLinks />}
             </ul>
           </div>
 
