@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import { Link } from "react-router-dom";
 
 const Appointment = ({ history }) => {
   const [medicalNeed, setMedicalNeed] = useState("");
@@ -7,13 +8,13 @@ const Appointment = ({ history }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     console.log("Appointment details:", { medicalNeed, date });
     
     alert(`Appointment for ${medicalNeed} has been scheduled successfully!`);
-
-    // Redirect new users to registration page
-    history.push("/Booking-Web-Application/register");
+  
+    // Redirect to appointment list page
+    window.location.href = "/Booking-Web-Application/appointment-list";
   };
 
   return (
@@ -88,7 +89,10 @@ const Appointment = ({ history }) => {
           className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
         >
           Make Appointment
+          
         </button>
+        {/* <Link to="/Booking-Web-Application/appointment-list">Go to Appointment List</Link> */}
+
       </form>
     </div>
   );

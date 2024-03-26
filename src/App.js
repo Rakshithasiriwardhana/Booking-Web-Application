@@ -12,6 +12,7 @@ import PasswordReset from "./pages/PasswordReset";
 import Register from "./pages/Register";
 import Patient from "./pages/patient/Patient";
 import Contact from "./pages/Contact";
+import AppointmentList from "./pages/AppointmentList";
 
 function App() {
   return (
@@ -22,14 +23,46 @@ function App() {
           <Route path="/Booking-Web-Application/" element={<Home />} />
           <Route path="/Booking-Web-Application/login" element={<Login />} />
           <Route path="/Booking-Web-Application/home" element={<Home />} />
-          <Route path="/Booking-Web-Application/appointment" element={<Appointment />} />
-          <Route path="/Booking-Web-Application/register" element={<SignIn />} />
-          <Route path="/Booking-Web-Application/Passreset" element={<PasswordReset/>} />
-          <Route path="/Booking-Web-Application/doctors/:id" element={<DoctorList />} />
-          <Route path="/Booking-Web-Application/docregister" element={<Register/>} />
-          <Route path="/Booking-Web-Application/patient" element={<Patient />} />
-          <Route path="/Booking-Web-Application/doctors" element={<Doctors />} />
-          <Route path="/Booking-Web-Application/contact" element={<Contact />} />
+
+          <Route
+            exact
+            path="/Booking-Web-Application/appointment"
+            element={<Appointment />}
+          />
+          <Route
+            exact
+            path="/Booking-Web-Application/appointment-list"
+            element={<AppointmentList />}
+          />
+
+          <Route
+            path="/Booking-Web-Application/register"
+            element={<SignIn />}
+          />
+          <Route
+            path="/Booking-Web-Application/Passreset"
+            element={<PasswordReset />}
+          />
+          <Route
+            path="/Booking-Web-Application/doctors/:id"
+            element={<DoctorList />}
+          />
+          <Route
+            path="/Booking-Web-Application/docregister"
+            element={<Register />}
+          />
+          <Route
+            path="/Booking-Web-Application/patient"
+            element={<Patient />}
+          />
+          <Route
+            path="/Booking-Web-Application/doctors"
+            element={<Doctors />}
+          />
+          <Route
+            path="/Booking-Web-Application/contact"
+            element={<Contact />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

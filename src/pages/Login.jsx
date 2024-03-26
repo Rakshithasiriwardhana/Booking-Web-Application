@@ -3,9 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import { AdminContext } from "./admin/AdminContextProvider";
+import UserManagement from "../component/UserManagement";
+
 
 const Login = () => {
-  const history = useNavigate(); 
+  const history = useNavigate();
   const { setLoggedUserDetails } = useContext(AdminContext);
   const [formData, setFormData] = useState({
     email: "",
@@ -27,10 +29,15 @@ const Login = () => {
       const decodedToken = jwtDecode(token);
 
       setLoggedUserDetails(decodedToken);
+
       if (decodedToken.email === "admin@gmail.com") {
-        history.push("/Booking-Web-Application/appointments");
+        window.location.href = "/Booking-Web-Application/appointments";
+      } else if (decodedToken.email === "patient@gmail.com") {
+        window.location.href = "/Booking-Web-Application/login";
+      } else if (decodedToken.email === "doctor@gmail.com") {
+        window.location.href = "/Booking-Web-Application/appointments";
       } else {
-        history.push("/Booking-Web-Application/home");
+        window.location.href = "/Booking-Web-Application/home";
       }
     } catch (error) {
       console.error("Login failed:", error.message);
@@ -84,6 +91,7 @@ const Login = () => {
             </Link>
           </p>
         </form>
+       <UserManagement/>
       </div>
     </section>
   );

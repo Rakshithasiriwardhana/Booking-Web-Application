@@ -19,35 +19,6 @@ const navLinks = [
   },
 ];
 
-const AdminNavLinks = () => (
-  <>
-    <li>
-      <NavLink
-        to="/Booking-Web-Application/appointment"
-        className="text-primaryColor text-[16px] leading-7 font-[600]"
-      >
-        Appointments
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        to="/Booking-Web-Application/docregister"
-        className="text-primaryColor text-[16px] leading-7 font-[600]"
-      >
-        For Doctor
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        to="/Booking-Web-Application/patient"
-        className="text-primaryColor text-[16px] leading-7 font-[600]"
-      >
-        For Patients
-      </NavLink>
-    </li>
-  </>
-);
-
 const Header = React.memo(() => {
   const [showDropdown, setShowDropdown] = useState(false);
   const { userRole } = useContext(AdminContext);
@@ -68,7 +39,7 @@ const Header = React.memo(() => {
             <ul className="menu flex items-center gap-[2.7rem]">
               {navLinks.map(({ display, path, dropdown }, index) => (
                 <li key={index}>
-                  {(dropdown && userRole !== "admin") ? (
+                  {dropdown ? (
                     <div
                       className="dropdown"
                       onClick={() => toggleDropdown()}
@@ -95,16 +66,18 @@ const Header = React.memo(() => {
                       )}
                     </div>
                   ) : (
-                    <NavLink
-                      to={path}
-                      className="text-primaryColor text-[16px] leading-7 font-[500]"
-                    >
-                      {display}
-                    </NavLink>
+                    
+                    (userRole !== "patient" || display !== "Registration") && (
+                      <NavLink
+                        to={path}
+                        className="text-primaryColor text-[16px] leading-7 font-[500]"
+                      >
+                        {display}
+                      </NavLink>
+                    )
                   )}
                 </li>
               ))}
-              {userRole === "admin" && <AdminNavLinks />}
             </ul>
           </div>
 

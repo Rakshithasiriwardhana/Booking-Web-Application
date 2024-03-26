@@ -46,7 +46,36 @@
       "responses": [
         {
           "uuid": "6cdb2e90-52ba-42f7-9f2a-ef7754aa9b0e",
-          "body": "{\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiZ2VuZGVyIjoibWFsZSIsImlhdCI6MTYzNTc3Mzk2MiwiZXhwIjoxNjM1Nzc3NTYyfQ.jbEkFzonWUKH72Qzpm1HbbNxXnXQ5_xVGAIOng8wIak\"\n}",
+          "body": "{\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiZ2VuZGVyIjoibWFsZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYzNTc3Mzk2MiwiZXhwIjoxNjM1Nzc3NTYyfQ.363uEyFza_QO2Q0ijbtyHNVbz_seUApn5Sz_6FEv8wU\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "77f5fdb9-d498-465a-8518-38ef6238e06f",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/v1/appoitments",
+      "responses": [
+        {
+          "uuid": "27f6deb8-d9fe-4023-bb2c-8173ca3a7288",
+          "body": "{\n  \"data\": [\n    {\n      \"id\": 1,\n      \"patientName\": \"John Doe\",\n      \"doctorName\": \"Dr. Smith\",\n      \"date\": \"2024-03-15\",\n      \"time\": \"10:00 AM\",\n      \"status\": \"Confirmed\"\n    },\n    {\n      \"id\": 2,\n      \"patientName\": \"Alice Johnson\",\n      \"doctorName\": \"Dr. Brown\",\n      \"date\": \"2024-03-16\",\n      \"time\": \"11:00 AM\",\n      \"status\": \"Pending\"\n    },\n    {\n      \"id\": 3,\n      \"patientName\": \"Sarah Lee\",\n      \"doctorName\": \"Dr. Johnson\",\n      \"date\": \"2024-03-17\",\n      \"time\": \"02:00 PM\",\n      \"status\": \"Confirmed\"\n    },\n    {\n      \"id\": 4,\n      \"patientName\": \"Michael Smith\",\n      \"doctorName\": \"Dr. White\",\n      \"date\": \"2024-03-18\",\n      \"time\": \"03:30 PM\",\n      \"status\": \"Cancelled\"\n    },\n    {\n      \"id\": 5,\n      \"patientName\": \"Emily Brown\",\n      \"doctorName\": \"Dr. Lee\",\n      \"date\": \"2024-03-19\",\n      \"time\": \"09:00 AM\",\n      \"status\": \"Confirmed\"\n    },\n    {\n      \"id\": 6,\n      \"patientName\": \"David Jones\",\n      \"doctorName\": \"Dr. Black\",\n      \"date\": \"2024-03-20\",\n      \"time\": \"01:00 PM\",\n      \"status\": \"Pending\"\n    },\n    {\n      \"id\": 7,\n      \"patientName\": \"Olivia Wilson\",\n      \"doctorName\": \"Dr. Green\",\n      \"date\": \"2024-03-21\",\n      \"time\": \"11:30 AM\",\n      \"status\": \"Confirmed\"\n    },\n    {\n      \"id\": 8,\n      \"patientName\": \"Emma Taylor\",\n      \"doctorName\": \"Dr. Red\",\n      \"date\": \"2024-03-22\",\n      \"time\": \"04:00 PM\",\n      \"status\": \"Confirmed\"\n    },\n    {\n      \"id\": 9,\n      \"patientName\": \"Noah Martinez\",\n      \"doctorName\": \"Dr. Yellow\",\n      \"date\": \"2024-03-23\",\n      \"time\": \"10:30 AM\",\n      \"status\": \"Pending\"\n    },\n    {\n      \"id\": 10,\n      \"patientName\": \"Sophia Clark\",\n      \"doctorName\": \"Dr. Blue\",\n      \"date\": \"2024-03-24\",\n      \"time\": \"02:30 PM\",\n      \"status\": \"Confirmed\"\n    }\n  ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -75,6 +104,10 @@
     {
       "type": "route",
       "uuid": "e5aece46-c872-442c-9df5-740cb3aa9759"
+    },
+    {
+      "type": "route",
+      "uuid": "77f5fdb9-d498-465a-8518-38ef6238e06f"
     }
   ],
   "proxyMode": false,

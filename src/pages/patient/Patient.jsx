@@ -2,8 +2,7 @@ import React, { useState } from "react";
 
 const Patient = () => {
   const [date, setDate] = useState("");
-  const [medicalNeed, setMedicalNeed] = useState("");
-  const [description, setDescription] = useState("");
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
